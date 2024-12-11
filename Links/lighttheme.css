@@ -1,0 +1,18 @@
+body.light {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #000000;
+    --link-hover: #333333;
+    --link-text: #ffffff;
+}
+
+/* Light theme specific background */
+body.light .animated-background {
+    background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+}
+
+body.light #stars1,
+body.light #stars2,
+body.light #stars3 {
+    background-color: #000000;
+}

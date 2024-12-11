@@ -1,0 +1,18 @@
+body.dark {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --link-color: #ffffff;
+    --link-hover: #cccccc;
+    --link-text: #000000;
+}
+
+/* Dark theme specific background */
+body.dark .animated-background {
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+}
+
+body.dark #stars1,
+body.dark #stars2,
+body.dark #stars3 {
+    background-color: #ffffff;
+}
