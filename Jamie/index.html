@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie Reddin</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+    <div class="container mx-auto px-4 py-10">
+        <div class="flex items-center justify-center mb-10">
+            <div class="rounded-full overflow-hidden border-4 border-black w-24 h-24">
+                <img src="./avatar.jpg" alt="Avatar" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-3xl ml-4 font-bold">Jamie Reddin</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 shadow-lg">
+                <i class="fab fa-twitter text-4xl mb-4 text-blue-400"></i>
+                <h2 class="text-xl font-semibold">Twitter</h2>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 shadow-lg">
+                <i class="fab fa-github text-4xl mb-4 text-gray-400"></i>
+                <h2 class="text-xl font-semibold">GitHub</h2>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 shadow-lg">
+                <i class="fab fa-linkedin text-4xl mb-4 text-blue-600"></i>
+                <h2 class="text-xl font-semibold">LinkedIn</h2>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 shadow-lg">
+                <i class="fas fa-globe text-4xl mb-4 text-green-500"></i>
+                <h2 class="text-xl font-semibold">Website</h2>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 shadow-lg">
+                <i class="fas fa-envelope text-4xl mb-4 text-red-500"></i>
+                <h2 class="text-xl font-semibold">Email</h2>
+            </a>
+        </div>
+
+        <button id="aboutBtn" class="mt-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            About Me
+        </button>
+
+        <div id="aboutModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white rounded-lg p-8 shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">About Me</h2>
+                <p class="text-gray-700">
+                    Hi, I'm Jamie Reddin, a passionate web developer with a keen interest in front-end technologies. I
+                    enjoy building user-friendly and visually appealing websites.
+                </p>
+                <button id="closeModalBtn"
+                    class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const aboutBtn = document.getElementById('aboutBtn');
+        const aboutModal = document.getElementById('aboutModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        aboutBtn.addEventListener('click', () => {
+            gsap.to(aboutModal, { opacity: 1, duration: 0.3, ease: "power1.inOut", visibility: "visible" });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            gsap.to(aboutModal, {
+                opacity: 0, duration: 0.3, ease: "power1.inOut", visibility: "hidden", onComplete: () => {
+                    aboutModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
